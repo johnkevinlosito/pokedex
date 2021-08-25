@@ -39,6 +39,7 @@ li {
 }
 a {
     text-decoration: none;
+    color: var(--dark);
 }
 body {
     font-family: "Karla", sans-serif;
@@ -57,4 +58,11 @@ h6 {
 p,
 a {
     font-family: "Source Sans Pro", sans-serif;
+}
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+#root {
+    position: relative;
 }

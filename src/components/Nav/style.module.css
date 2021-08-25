@@ -1,0 +1,40 @@
+/* .nav {
+    display: none;
+} */
+.nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav ul li {
+    margin: 1rem;
+}
+
+.nav ul li a {
+    font-size: 1.6875rem;
+}
+
+.nav ul li > a:focus,
+.nav ul li > a:hover,
+.active {
+    border-bottom: 0.1875rem solid var(--dark);
+}
+
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+        justify-content: center;
+    }
+    .nav ul {
+        flex-direction: row;
+    }
+    .nav ul li a {
+        font-size: 1.1875rem;
+    }
+}
+@media (min-width: 1440px) {
+    .nav ul li a {
+        font-size: 1.5625rem;
+    }
+}

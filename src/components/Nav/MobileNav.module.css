@@ -1,0 +1,29 @@
+.mobile_nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 3.125rem 4.6875rem;
+    border-radius: 0px 0px 16px 16px;
+    border: none;
+    width: 100vw;
+    background: linear-gradient(var(--third), var(--primary));
+    z-index: 1;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 8.625rem;
+}
+.mobileNavMenuBtn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.625rem;
+}
+.mobileNavMenuBtn img {
+    max-width: 2rem;
+}
