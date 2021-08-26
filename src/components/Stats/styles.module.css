@@ -1,0 +1,20 @@
+.stats_content {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0.8125rem;
+}
+.stat_value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9375rem;
+    width: 2.269375rem;
+    height: 2.269375rem;
+    margin: 0 auto 0.4rem;
+    border: solid 4px var(--dark);
+    border-radius: 50%;
+}
+.stat_name {
+    font-size: 0.75rem;
+    text-align: center;
+}

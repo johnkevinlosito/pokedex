@@ -66,3 +66,73 @@ a {
 #root {
     position: relative;
 }
+
+.fire,
+.fighting,
+.dragon {
+    background-color: var(--fire);
+}
+.fire.gradient,
+.fighting.gradient,
+.dragon.gradient {
+    background: linear-gradient(270deg, #b23327, #d93e30);
+}
+
+.water,
+.ice {
+    background-color: var(--water);
+}
+.water.gradient,
+.ice.gradient {
+    background: linear-gradient(270deg, #5bc7fa, #35baff);
+}
+.normal,
+.flying {
+    background-color: var(--normal);
+}
+.normal.gradient,
+.flying.gradient {
+    background: linear-gradient(270deg, #76aadb, #4192df);
+}
+.grass,
+.bug {
+    background-color: var(--grass);
+}
+.grass.gradient,
+.bug.gradient {
+    background: linear-gradient(270deg, #64d368, #64d368);
+}
+.rock,
+.steel,
+.dark {
+    background-color: var(--rock);
+}
+.rock.gradient,
+.steel.gradient,
+.dark.gradient {
+    background: linear-gradient(270deg, #a1a1a1, #504f4f);
+}
+.electric {
+    background-color: var(--electric);
+}
+.electric.gradient {
+    background: linear-gradient(270deg, #f5db13, #f2b807);
+}
+.ground {
+    background-color: var(--ground);
+}
+.ground.gradient {
+    background: linear-gradient(270deg, #9b897b, #9c7d65);
+}
+.poison,
+.psychic,
+.fairy,
+.ghost {
+    background-color: var(--poison);
+}
+.poison.gradient,
+.psychic.gradient,
+.fairy.gradient,
+.ghost.gradient {
+    background: linear-gradient(270deg, #f89eae, #f4b5c1);
+}

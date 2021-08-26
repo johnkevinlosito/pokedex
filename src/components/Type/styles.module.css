@@ -1,0 +1,11 @@
+.type {
+    margin-top: 0.4rem;
+    margin-right: 0.775625rem;
+    box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.18);
+    border-radius: 11px;
+    font-size: 0.75rem;
+    padding: 0.15625rem 0.5rem 0.125rem;
+    min-width: 3.5875rem;
+    text-align: center;
+    text-transform: capitalize;
+}
