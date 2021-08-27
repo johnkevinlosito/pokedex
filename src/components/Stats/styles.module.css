@@ -1,7 +1,6 @@
 .stats_content {
     display: flex;
     flex-direction: column;
-    margin-right: 0.8125rem;
 }
 .stat_value {
     display: flex;
@@ -17,4 +16,5 @@
 .stat_name {
     font-size: 0.75rem;
     text-align: center;
+    text-transform: capitalize;
 }

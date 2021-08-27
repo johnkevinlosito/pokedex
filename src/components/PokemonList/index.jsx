@@ -1,22 +1,43 @@
-import React from "react";
-import Card from "../Card";
+import React, { useState, useEffect } from "react";
+import PokemonCard from "../PokemonCard";
 import Stats from "../Stats";
 import Type from "../Type";
 import classes from "./styles.module.css";
+import PokemonDetail from "../PokemonDetail";
 
 const PokemonList = ({ pokemons }) => {
+    const [showDetails, setShowDetails] = useState(false);
+    const [pokemonData, setPokemonData] = useState([]);
+
+    const showDetailsHandler = (pokemon) => {
+        setShowDetails(true);
+        setPokemonData(pokemon);
+    };
+    const hideDetailsHandler = () => {
+        setShowDetails(false);
+    };
+
+    useEffect(() => {
+        showDetails && (document.body.style.overflow = "hidden");
+        !showDetails && (document.body.style.overflow = "");
+    }, [showDetails]);
     return (
         <>
             {pokemons
                 .sort((a, b) => a.id - b.id)
                 .map((pokemon) => (
-                    <Card key={pokemon.id}>
+                    <PokemonCard
+                        key={pokemon.id}
+                        onClick={showDetailsHandler}
+                        pokemon={pokemon}
+                    >
                         <div className={classes.info}>
                             <h2 className={classes.pokemon_name}>
                                 {pokemon.name}
                             </h2>
                             <div className={classes.pokemon_stats}>
                                 <Stats
+                                    style={{ marginRight: "0.8125rem" }}
                                     name={"Attack"}
                                     value={pokemon.stats[1].base_stat}
                                 />
@@ -39,12 +60,24 @@ const PokemonList = ({ pokemons }) => {
                                 src={
                                     pokemon.sprites.other.dream_world
                                         .front_default
+                                        ? pokemon.sprites.other.dream_world
+                                              .front_default
+                                        : pokemon.sprites.other[
+                                              "official-artwork"
+                                          ].front_default
                                 }
                                 alt=""
                             />
                         </div>
-                    </Card>
+                    </PokemonCard>
                 ))}
+
+            {showDetails && (
+                <PokemonDetail
+                    onClose={hideDetailsHandler}
+                    pokemon={pokemonData}
+                />
+            )}
         </>
     );
 };

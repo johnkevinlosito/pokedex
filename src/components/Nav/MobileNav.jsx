@@ -6,16 +6,19 @@ import CloseIcon from "../../assets/closeIcon.png";
 
 const MobileNav = (props) => {
     return (
-        <div className={classes.mobile_nav}>
-            <button
-                className={classes.mobileNavMenuBtn}
-                onClick={props.onClose}
-            >
-                <img src={CloseIcon} alt="" />
-            </button>
-            <img src={Logo} alt="Pokemon Logo" className={classes.logo} />
-            <Nav showMobileNav={props.onClose} />
-        </div>
+        <>
+            <div className={classes.backdrop}></div>
+            <div className={classes.mobile_nav}>
+                <button
+                    className={classes.mobileNavMenuBtn}
+                    onClick={props.onClose}
+                >
+                    <img src={CloseIcon} alt="" />
+                </button>
+                <img src={Logo} alt="Pokemon Logo" className={classes.logo} />
+                <Nav showMobileNav={props.onClose} />
+            </div>
+        </>
     );
 };
 

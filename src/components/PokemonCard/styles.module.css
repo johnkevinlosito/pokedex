@@ -1,0 +1,20 @@
+.card {
+    margin: 0 auto 1.5rem;
+    border-radius: 8px;
+    box-shadow: 4px 4px 16px rgba(1, 28, 64, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    min-height: 8.76125rem;
+    max-width: 22.015625rem;
+    max-height: 8.55375rem;
+    flex: 0 0 33.333333%;
+    min-width: 18.0625rem;
+}
+
+@media (min-width: 375px) {
+    .card {
+        min-width: 21.0625rem;
+    }
+}

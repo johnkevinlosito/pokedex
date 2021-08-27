@@ -63,7 +63,8 @@ a {
     width: 100%;
     margin: 0 auto;
 }
-#root {
+#root,
+#overlays {
     position: relative;
 }
 
@@ -77,6 +78,11 @@ a {
 .dragon.gradient {
     background: linear-gradient(270deg, #b23327, #d93e30);
 }
+.fire.darkGradient,
+.fighting.darkGradient,
+.dragon.darkGradient {
+    background: linear-gradient(180deg, #b23327, #d93e30);
+}
 
 .water,
 .ice {
@@ -86,6 +92,10 @@ a {
 .ice.gradient {
     background: linear-gradient(270deg, #5bc7fa, #35baff);
 }
+.water.darkGradient,
+.ice.darkGradient {
+    background: linear-gradient(180deg, #1e749c, #35baff);
+}
 .normal,
 .flying {
     background-color: var(--normal);
@@ -94,13 +104,21 @@ a {
 .flying.gradient {
     background: linear-gradient(270deg, #76aadb, #4192df);
 }
+.normal.darkGradient,
+.flying.darkGradient {
+    background: linear-gradient(180deg, #2f87da, #4192df);
+}
 .grass,
 .bug {
     background-color: var(--grass);
 }
 .grass.gradient,
 .bug.gradient {
-    background: linear-gradient(270deg, #64d368, #64d368);
+    background: linear-gradient(270deg, #64d368 0.15%, #64d368 70.88%);
+}
+.grass.darkGradient,
+.bug.darkGradient {
+    background: linear-gradient(180deg, #4c9c4e, #64d368);
 }
 .rock,
 .steel,
@@ -112,17 +130,28 @@ a {
 .dark.gradient {
     background: linear-gradient(270deg, #a1a1a1, #504f4f);
 }
+.rock.darkGradient,
+.steel.darkGradient,
+.dark.darkGradient {
+    background: linear-gradient(180deg, #5a5959, #7c7b7b);
+}
 .electric {
     background-color: var(--electric);
 }
 .electric.gradient {
     background: linear-gradient(270deg, #f5db13, #f2b807);
 }
+.electric.darkGradient {
+    background: linear-gradient(180deg, #f0bc22, #f2b807);
+}
 .ground {
     background-color: var(--ground);
 }
 .ground.gradient {
     background: linear-gradient(270deg, #9b897b, #9c7d65);
+}
+.ground.darkGradient {
+    background: linear-gradient(180deg, #d39668, #9c7d65);
 }
 .poison,
 .psychic,
@@ -135,4 +164,10 @@ a {
 .fairy.gradient,
 .ghost.gradient {
     background: linear-gradient(270deg, #f89eae, #f4b5c1);
+}
+.poison.darkGradient,
+.psychic.darkGradient,
+.fairy.darkGradient,
+.ghost.darkGradient {
+    background: linear-gradient(180deg, #f78398, #f4b5c1);
 }
