@@ -1,0 +1,112 @@
+.modal {
+    width: 41.649375rem;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(33, 33, 33, 0.5);
+    z-index: 30;
+}
+.closeBtn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: fixed;
+    top: -2.78rem;
+    right: 0.875rem;
+    z-index: 1;
+    filter: brightness(0.5);
+}
+.closeBtn img {
+    max-width: 2rem;
+}
+.content {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: stretch;
+}
+.left_content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 4px 4px 8px rgba(1, 28, 64, 0.2);
+    border-radius: 8px 0px 0px 8px;
+    z-index: 1;
+}
+.pokemon_img {
+    width: 17.918125rem;
+    margin: 2.021875rem 0.58125rem;
+}
+.type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0.871875rem;
+    right: 0.7525rem;
+}
+.details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 0px 8px 8px 0px;
+    min-width: 22.75rem;
+    width: 100%;
+    padding: 1.685rem 1.04625rem 1.325rem;
+}
+.top_details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 0.738125rem;
+}
+.top_details h1 {
+    font-size: 2.25rem;
+    color: var(--white);
+    text-transform: capitalize;
+}
+.gen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.id {
+    font-size: 1rem;
+    background-color: #f2cb07;
+    padding: 0.4375rem;
+    border-radius: 50%;
+    min-width: 41px;
+    min-height: 41px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.genNum {
+    font-size: 1rem;
+    color: #f2f2f2;
+    margin-right: 0.5rem;
+}
+
+.stats {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+@media (min-width: 1440px) {
+    .modal {
+        width: 49.795625rem;
+    }
+    .pokemon_img {
+        width: 21.4225rem;
+        height: 19.024375rem;
+        margin: 2.414375rem 0.654375rem 1.748125rem 0.695rem;
+    }
+}
