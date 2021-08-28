@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Container from "../../components/Container";
 import Loading from "../../components/Loading";
+import Pagination from "../../components/Pagination";
 import PokemonList from "../../components/PokemonList";
 import classes from "./styles.module.css";
 
 const Pokedex = () => {
     const [pokemons, setPokemons] = useState([]);
     const [currentUrl, setCurrentUrl] = useState(
-        "https://pokeapi.co/api/v2/pokemon/"
+        "https://pokeapi.co/api/v2/pokemon/?limit=18"
     );
     const [nextUrl, setNextUrl] = useState();
     const [prevUrl, setPrevUrl] = useState();
@@ -53,6 +54,12 @@ const Pokedex = () => {
         };
     }, [currentUrl]);
 
+    const goToNextPageHandler = () => {
+        setCurrentUrl(nextUrl);
+    };
+    const goToPrevPageHandler = () => {
+        setCurrentUrl(prevUrl);
+    };
     if (loading) return <Loading />;
 
     return (
@@ -60,6 +67,10 @@ const Pokedex = () => {
             <Container className={classes.pokedex_list}>
                 <PokemonList pokemons={pokemons} />
             </Container>
+            <Pagination
+                goToPrevPage={prevUrl ? goToPrevPageHandler : null}
+                goToNextPage={nextUrl ? goToNextPageHandler : null}
+            />
         </section>
     );
 };
