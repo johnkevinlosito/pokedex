@@ -4,6 +4,7 @@ import Stats from "../Stats";
 import Type from "../Type";
 import classes from "./styles.module.css";
 import PokemonDetail from "../PokemonDetail";
+import Loading from "../Loading";
 
 const PokemonList = ({ pokemons }) => {
     const [showDetails, setShowDetails] = useState(false);
@@ -82,6 +83,7 @@ const PokemonList = ({ pokemons }) => {
                     </PokemonCard>
                 ))}
 
+            {showDetails && isLoading && <Loading />}
             {showDetails && !isLoading && (
                 <PokemonDetail
                     onClose={hideDetailsHandler}

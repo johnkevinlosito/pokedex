@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Container from "../../components/Container";
+import Loading from "../../components/Loading";
 import PokemonList from "../../components/PokemonList";
 import classes from "./styles.module.css";
 
@@ -52,9 +53,8 @@ const Pokedex = () => {
         };
     }, [currentUrl]);
 
-    if (loading) {
-        return "Loading...";
-    }
+    if (loading) return <Loading />;
+
     return (
         <section className={classes.pokedex}>
             <Container className={classes.pokedex_list}>
