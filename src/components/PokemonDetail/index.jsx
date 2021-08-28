@@ -23,9 +23,17 @@ const PokemonDetail = (props) => {
     }, []);
     const displayModal =
         width < breakpoint ? (
-            <Mobile onClose={props.onClose} pokemon={props.pokemon} />
+            <Mobile
+                onClose={props.onClose}
+                pokemon={props.pokemon}
+                specie={props.specie}
+            />
         ) : (
-            <Desktop onClose={props.onClose} pokemon={props.pokemon} />
+            <Desktop
+                onClose={props.onClose}
+                pokemon={props.pokemon}
+                specie={props.specie}
+            />
         );
     return (
         <>

@@ -8,21 +8,34 @@ const Pokedex = () => {
     const [currentUrl, setCurrentUrl] = useState(
         "https://pokeapi.co/api/v2/pokemon/"
     );
+    const [nextUrl, setNextUrl] = useState();
+    const [prevUrl, setPrevUrl] = useState();
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // use this for pagination
-        fetch(currentUrl)
-            .then((response) => response.json())
-            .then((data) => {
-                const results = data.results;
-                const pokemonData = results.map((result) => {
-                    return fetch(result.url).then((response) =>
-                        response.json()
-                    );
+        const abortController = new AbortController();
+
+        setLoading(true);
+        try {
+            fetch(currentUrl, { signal: abortController.signal })
+                .then((response) => response.json())
+                .then((data) => {
+                    setNextUrl(data.next);
+                    setPrevUrl(data.previous);
+                    const results = data.results;
+                    const pokemonData = results.map((result) => {
+                        return fetch(result.url).then((response) =>
+                            response.json()
+                        );
+                    });
+                    return Promise.all(pokemonData);
+                })
+                .then((data) => {
+                    setPokemons(data);
+                    setLoading(false);
                 });
-                return Promise.all(pokemonData);
-            })
-            .then((data) => setPokemons(data));
+        } catch (e) {}
+
         // const fetchPokemonData = async (url) => {
         //     const response = await fetch(url);
         //     const res = await response.json();
@@ -34,9 +47,14 @@ const Pokedex = () => {
         //     res.results.map((pokemon) => fetchPokemonData(pokemon.url));
         // };
         // fetchPokemons();
-        return () => {};
+        return () => {
+            abortController.abort();
+        };
     }, [currentUrl]);
 
+    if (loading) {
+        return "Loading...";
+    }
     return (
         <section className={classes.pokedex}>
             <Container className={classes.pokedex_list}>

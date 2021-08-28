@@ -17,6 +17,7 @@
     top: 0.9375rem;
     left: 0.875rem;
     z-index: 1;
+    filter: brightness(0.5);
 }
 .closeBtn img {
     max-width: 2rem;
@@ -86,6 +87,7 @@
 }
 .genNum {
     font-size: 1rem;
+    text-transform: capitalize;
     color: #f2f2f2;
     margin: 0.5rem;
 }

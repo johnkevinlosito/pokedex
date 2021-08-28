@@ -8,8 +8,18 @@ import PokemonDetail from "../PokemonDetail";
 const PokemonList = ({ pokemons }) => {
     const [showDetails, setShowDetails] = useState(false);
     const [pokemonData, setPokemonData] = useState([]);
+    const [specie, setSpecie] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     const showDetailsHandler = (pokemon) => {
+        setIsLoading(true);
+        const getSpecie = async () => {
+            const response = await fetch(pokemon.species.url);
+            const res = await response.json();
+            setSpecie(res);
+            setIsLoading(false);
+        };
+        getSpecie();
         setShowDetails(true);
         setPokemonData(pokemon);
     };
@@ -72,10 +82,11 @@ const PokemonList = ({ pokemons }) => {
                     </PokemonCard>
                 ))}
 
-            {showDetails && (
+            {showDetails && !isLoading && (
                 <PokemonDetail
                     onClose={hideDetailsHandler}
                     pokemon={pokemonData}
+                    specie={specie}
                 />
             )}
         </>

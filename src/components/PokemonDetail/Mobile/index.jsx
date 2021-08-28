@@ -5,7 +5,8 @@ import Abilities from "../../Abilities";
 import Type from "../../Type";
 import classes from "./styles.module.css";
 
-const Mobile = ({ pokemon, onClose }) => {
+const Mobile = ({ pokemon, onClose, specie }) => {
+    const gen = specie.generation.name.replace("-", " ");
     return (
         <div
             className={`${classes.modal} ${pokemon.types[0].type.name} gradient`}
@@ -31,7 +32,7 @@ const Mobile = ({ pokemon, onClose }) => {
                     <div className={classes.genType}>
                         <div className={classes.gen}>
                             <span className={classes.id}>{pokemon.id}</span>
-                            <span className={classes.genNum}>Generation 1</span>
+                            <span className={classes.genNum}>{gen}</span>
                         </div>
 
                         <div className={classes.type}>

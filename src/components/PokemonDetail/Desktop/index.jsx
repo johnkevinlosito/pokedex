@@ -5,7 +5,8 @@ import Abilities from "../../Abilities";
 import Type from "../../Type";
 import classes from "./styles.module.css";
 
-const Desktop = ({ pokemon, onClose }) => {
+const Desktop = ({ pokemon, onClose, specie }) => {
+    const gen = specie.generation.name.replace("-", " ");
     return (
         <div className={`${classes.modal}`}>
             <button className={classes.closeBtn} onClick={onClose}>
@@ -40,7 +41,7 @@ const Desktop = ({ pokemon, onClose }) => {
                     <div className={classes.top_details}>
                         <h1>{pokemon.name}</h1>
                         <div className={classes.gen}>
-                            <span className={classes.genNum}>Generation 1</span>
+                            <span className={classes.genNum}>{gen}</span>
                             <span className={classes.id}>{pokemon.id}</span>
                         </div>
                     </div>
