@@ -15,20 +15,21 @@ const Pokedex = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const abortController = new AbortController();
+        const Pokedex = require("pokeapi-js-wrapper");
+        const P = new Pokedex.Pokedex({ cacheImages: true });
+        // const abortController = new AbortController();
 
         setLoading(true);
         try {
-            fetch(currentUrl, { signal: abortController.signal })
-                .then((response) => response.json())
-                .then((data) => {
-                    setNextUrl(data.next);
-                    setPrevUrl(data.previous);
-                    const results = data.results;
+            P.resource(currentUrl)
+                .then(function (response) {
+                    setNextUrl(response.next);
+                    setPrevUrl(response.previous);
+                    const results = response.results;
                     const pokemonData = results.map((result) => {
-                        return fetch(result.url).then((response) =>
-                            response.json()
-                        );
+                        return P.resource(result.url).then(function (response) {
+                            return response;
+                        });
                     });
                     return Promise.all(pokemonData);
                 })
@@ -36,21 +37,28 @@ const Pokedex = () => {
                     setPokemons(data);
                     setLoading(false);
                 });
+
+            // fetch(currentUrl, { signal: abortController.signal })
+            //     .then((response) => response.json())
+            //     .then((data) => {
+            //         setNextUrl(data.next);
+            //         setPrevUrl(data.previous);
+            //         const results = data.results;
+            //         const pokemonData = results.map((result) => {
+            //             return fetch(result.url).then((response) =>
+            //                 response.json()
+            //             );
+            //         });
+            //         return Promise.all(pokemonData);
+            //     })
+            //     .then((data) => {
+            //         setPokemons(data);
+            //         setLoading(false);
+            //     });
         } catch (e) {}
 
-        // const fetchPokemonData = async (url) => {
-        //     const response = await fetch(url);
-        //     const res = await response.json();
-        //     setPokemons((prev) => [...prev, res]);
-        // };
-        // const fetchPokemons = async () => {
-        //     const response = await fetch(currentUrl);
-        //     const res = await response.json();
-        //     res.results.map((pokemon) => fetchPokemonData(pokemon.url));
-        // };
-        // fetchPokemons();
         return () => {
-            abortController.abort();
+            // abortController.abort();
         };
     }, [currentUrl]);
 

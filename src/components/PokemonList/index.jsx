@@ -13,12 +13,15 @@ const PokemonList = ({ pokemons }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     const showDetailsHandler = (pokemon) => {
+        const Pokedex = require("pokeapi-js-wrapper");
+        const P = new Pokedex.Pokedex({ cacheImages: true });
         setIsLoading(true);
+
         const getSpecie = async () => {
-            const response = await fetch(pokemon.species.url);
-            const res = await response.json();
-            setSpecie(res);
-            setIsLoading(false);
+            P.resource(pokemon.species.url).then((response) => {
+                setSpecie(response);
+                setIsLoading(false);
+            });
         };
         getSpecie();
         setShowDetails(true);
