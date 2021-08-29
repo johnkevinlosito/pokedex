@@ -11,7 +11,7 @@ const Home = () => {
                     <div className={classes.hero_text}>
                         <h1>
                             <span>Find</span> all your favorite
-                            <span>Pokemon</span>
+                            <span> Pokemon</span>
                         </h1>
                         <h2>
                             You can know the type of Pokemon, its strengths,

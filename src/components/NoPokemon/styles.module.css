@@ -1,0 +1,28 @@
+.noContent {
+    margin: 25% auto;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.noContent img {
+    width: 3.75rem;
+    animation: rotate 2s ease-in infinite;
+    margin-bottom: 1.25rem;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    35% {
+        transform: rotate(45deg);
+    }
+    70% {
+        transform: rotate(-45deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
