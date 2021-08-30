@@ -80,7 +80,7 @@ const PokemonList = ({ pokemons }) => {
                                               "official-artwork"
                                           ].front_default
                                 }
-                                alt=""
+                                alt={pokemon.name}
                             />
                         </div>
                     </PokemonCard>

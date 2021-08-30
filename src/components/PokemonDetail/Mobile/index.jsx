@@ -24,7 +24,7 @@ const Mobile = ({ pokemon, onClose, specie }) => {
                             : pokemon.sprites.other["official-artwork"]
                                   .front_default
                     }
-                    alt=""
+                    alt={pokemon.name}
                 />
                 <div
                     className={`${classes.details} ${pokemon.types[0].type.name} darkGradient`}
