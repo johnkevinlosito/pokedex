@@ -42,6 +42,11 @@ const About = () => {
                         </a>{" "}
                         which is a free and open to use consumption-only API.{" "}
                     </p>
+                    <p className={classes.copyright}>
+                        *Pokémon and Pokémon character names are trademarks of
+                        Nintendo. Other trademarks are the property of their
+                        respective owners.
+                    </p>
                 </div>
             </Container>
         </section>

@@ -14,8 +14,8 @@ const Home = () => {
                             <span> Pokemon</span>
                         </h1>
                         <h2>
-                            You can know the type of Pokemon, its strengths,
-                            disadvantages and abilities
+                            You can know the type of Pokemon, its base stats,
+                            and abilities
                         </h2>
                     </div>
                     <Link to="/pokedex" className={classes.btn_cta}>
