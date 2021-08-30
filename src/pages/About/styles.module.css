@@ -1,0 +1,43 @@
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.banner {
+    max-width: 15.875rem;
+    margin-bottom: 1.25rem;
+    animation: animate 4s ease-in-out infinite;
+}
+
+.content p {
+    font-size: 1.25rem;
+    margin: 0.625rem;
+}
+
+.content a {
+    text-decoration: underline;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(0, -20px) rotate(-20deg);
+    }
+    50% {
+        transform: translate(0, 30px) rotate(10deg);
+    }
+    100% {
+        transform: translate(0, -20px) rotate(-20deg);
+    }
+}
+
+@media (min-width: 768px) {
+    .about {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .banner {
+        margin: 1.25rem 2.25rem;
+    }
+}
