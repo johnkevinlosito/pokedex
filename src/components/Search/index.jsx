@@ -3,7 +3,7 @@ import classes from "./styles.module.css";
 
 const Search = (props) => {
     return (
-        <form className={classes.form}>
+        <form className={classes.form} onSubmit={e=> e.preventDefault()}>
             <input
                 type="text"
                 id="searchPokemon"
